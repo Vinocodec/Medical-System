@@ -4,8 +4,44 @@ import 'echarts/lib/chart/bar';
 import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
 import 'echarts/lib/component/grid';
+import axios from "axios";
+import {connect} from "react-redux";
 
 class HomeScreen extends Component {
+    checkLogin(){
+        const _this = this;
+        const { serverUrl } = _this.props;
+        let token = global.tools.getLoginUser();
+        if (global.tools.isEmpty(token)) {
+            _this.props.history.push('/login');
+            window.location.reload();
+        }else{
+            axios.post(serverUrl+ '/user/check_login',{token: token})
+                .then(function (response) {
+                    let resp = response.data;
+                    if(resp.code === 0){
+                        if (global.tools.isEmpty(resp.data.token)) {
+                            _this.props.history.push('/login');
+                            window.location.reload();
+                            Message.error('Session expired, please log in again!');
+                        }else{
+                            _this.setState({user: resp.data}, ()=>{
+                                _this.initPhoto();
+                            });
+                        }
+                    }else{
+                        _this.props.history.push('/login');
+                        window.location.reload();
+                        Message.error(resp.msg);
+                    }
+                }).catch(function (error) {
+                Message.error('Unable to get user information, please log in again!');
+                window.location.reload();
+                _this.props.history.push('/login');
+            })
+        }
+    }
+
     user = {
         username: 'Wade',
         phone: '77700000000',
