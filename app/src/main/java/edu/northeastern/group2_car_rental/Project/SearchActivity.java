@@ -47,6 +47,7 @@ import edu.northeastern.group40.R;
 
 public class SearchActivity extends AppCompatActivity {
 
+
     Button showStartDatePickerButton;
     TextView selectedStartDateTextView;
     Button showEndDatePickerButton;
