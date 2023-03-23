@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginBottom="15dp"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardElevation="3dp"
+    card_view:contentPadding="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/order_title"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:clickable="true"
+            android:gravity="start"
+            android:paddingStart="0dp"
+            android:textColor="@color/ocean_blue"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlSymmetry"
+            tools:text="2023 Lexus 350" />
+
+
+        <TextView
+            android:id="@+id/order_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/order_sum"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            card_view:layout_constraintTop_toBottomOf="@id/order_title"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintBottom_toTopOf="@id/order_sum"
+            tools:text="04/3/2023-12/21/2023" />
+
+
+        <TextView
+            android:id="@+id/order_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintBottom_toTopOf="@id/check_detail"
+            card_view:layout_constraintTop_toBottomOf="@id/order_time"
+            tools:text="Total: $ 140" />
+
+
+        <Button
+            android:id="@+id/order_rate"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/order_time"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:minHeight="48dp"
+            android:paddingStart="0dp"
+            android:text="@string/rate_this_order"
+            android:textColor="@color/ocean_blue"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@id/order_sum"
+            tools:ignore="RtlSymmetry" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/check_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/order_time"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="24dp"
+            android:layout_toEndOf="@id/order_time"
+            android:backgroundTint="@color/sky_blue"
+            android:clickable="true"
+            android:text="@string/detail"
+            android:textColor="#6D4C41"
+            android:textSize="12sp"
+            card_view:cornerRadius="10dp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@id/order_time"
+            card_view:layout_constraintTop_toBottomOf="@id/order_sum" />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
