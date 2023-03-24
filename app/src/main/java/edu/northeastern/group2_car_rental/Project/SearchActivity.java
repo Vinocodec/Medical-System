@@ -1,4 +1,4 @@
-package edu.northeastern.group40.Project;
+package edu.northeastern.group2.Project;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -46,7 +46,6 @@ import edu.northeastern.group40.Project.Models.MyLocation;
 import edu.northeastern.group40.R;
 
 public class SearchActivity extends AppCompatActivity {
-
     Button showStartDatePickerButton;
     TextView selectedStartDateTextView;
     Button showEndDatePickerButton;
