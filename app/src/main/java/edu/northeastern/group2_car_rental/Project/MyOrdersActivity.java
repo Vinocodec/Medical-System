@@ -40,8 +40,6 @@ public class MyOrdersActivity extends AppCompatActivity implements SelectListene
     private Button noOrdersBtn;
 
 
-
-
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
